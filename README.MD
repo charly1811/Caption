@@ -1,7 +1,5 @@
 # Caption
-========
-
-Java library to parse subtitle files
+## Java library to parse subtitle files
 
 ### Features
 * Parse Strings, InputStreams or files
@@ -14,7 +12,7 @@ Java library to parse subtitle files
 
 ### ToDo
 - [ ] Publish to Maven Central
-- [ ] Add Javadocs
+- [ ] Add JavaDocs
 - [ ] Cleanup code
 - [ ] Ability to convert from one format to another (Works but is a little buggy)
 - [ ] Add TimedText instances programmatically to a TimedTextResource
