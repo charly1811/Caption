@@ -14,5 +14,5 @@
 - [ ] Publish to Maven Central
 - [ ] Add JavaDocs
 - [ ] Cleanup code
-- [ ] Ability to convert from one format to another (Works but is a little buggy)
+- [x] Ability to convert from one format to another
 - [ ] Add TimedText instances programmatically to a TimedTextResource
