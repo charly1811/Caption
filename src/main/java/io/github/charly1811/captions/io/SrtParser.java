@@ -17,6 +17,7 @@ package io.github.charly1811.captions.io;
 
 import io.github.charly1811.captions.Parsers;
 import io.github.charly1811.captions.Types;
+import io.github.charly1811.captions.util.TimeUtils;
 
 public class SrtParser extends Parser {
 
@@ -45,7 +46,7 @@ public class SrtParser extends Parser {
     @Override
     public long[] extractTimeInterval(String line) {
         String[] tokens = line.split("(\\s*)(-->)(\\s*)");
-        return new long[]{stringToMillis(tokens[0]), stringToMillis(tokens[1])};
+        return new long[]{(long) TimeUtils.stringToMillis(tokens[0]), (long) TimeUtils.stringToMillis(tokens[1])};
     }
 
     @Override
@@ -55,7 +56,10 @@ public class SrtParser extends Parser {
 
     @Override
     public String getTimeLine(double position, double duration) {
-        return String.format("%s --> %s", millisToString(position), millisToString(position + duration));
+        String positionStartString = TimeUtils.millisToStringDouble(position).replace(".", getDecimalSymbol());
+        String positionEndString = TimeUtils.millisToStringDouble(position + duration).replace(".", getDecimalSymbol());
+
+        return String.format("%s --> %s", positionStartString, positionEndString);
     }
 
     @Override
@@ -71,5 +75,10 @@ public class SrtParser extends Parser {
     @Override
     public int getType() {
         return Parsers.SRT;
+    }
+
+    @Override
+    public String getDecimalSymbol() {
+        return ",";
     }
 }

@@ -26,10 +26,10 @@ public class TimedText implements Serializable {
 
     private int index;
     private String text;
-    private long position;
-    private long duration;
+    private double position;
+    private double duration;
 
-    public TimedText(int type, int index, String text, long position, long duration) {
+    public TimedText(int type, int index, String text, double position, double duration) {
         this.type = type;
         this.index = index;
         this.text = text;
@@ -50,7 +50,7 @@ public class TimedText implements Serializable {
         return index;
     }
 
-    public long getDuration() {
+    public double getDuration() {
         return duration;
     }
 
@@ -58,7 +58,7 @@ public class TimedText implements Serializable {
         return text;
     }
 
-    public long getPosition() {
+    public double getPosition() {
         return position;
     }
 
